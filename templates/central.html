@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block central %}
+
+<section class="container marketing">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 blog-main">
+<!--<img alt="Інтернет у Львові та Львівській області" src="/images/main.png" /> -->
+                    <div class="col-sm-8 blog-main">
+                        {% block newss %}{% endblock %}
+                        {% block services %}{% endblock %}
+                        {% block tariffs %}{% endblock %}
+                        {% block payment %}{% endblock %}
+                        {% block connect %}{% endblock %}
+                        {% block contacts %}{% endblock %}
+                    </div>
+
+                    <div class="col-sm-4">
+                         <div class="sidebar-module">
+                            <h2 class="text-center">"Радіо Сервіс"</h2>
+                            <div class="text-center">
+                                <a class="btn btn-success" href="#" role="button">Facebook</a>
+                                <a class="btn btn-success" href="/comanda/" role="button">Команда Радіосервіс</a>
+                                <!--<a class="btn btn-success" href="#" role="button">VK</a>-->
+                            </div>
+
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.container -->
+{% endblock %}

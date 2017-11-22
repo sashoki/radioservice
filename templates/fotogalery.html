@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block fotogalerys %}
+
+<div class="col-sm-12 text-center">
+	<h1 class="text-center"><a href="{% url 'fotogalerys' %}">{{ item.name }}</a></p></th></h1>
+	<hr>
+</div>
+
+    {% for photo in photos %}
+		<div class="col-sm-4 text-center">
+			<table class="gallery table table-bordered table-hover text-center">
+				<thead>
+					<tr class="success text-center">
+					  <th class="text-center">{{ photo.photo_title }}</th>
+					</tr>
+				</thead>
+				  <tbody>
+					<tr class="success">
+						<td>
+							<img class="thumbnail" src="{{ MEDIA_URL }}{{ photo.photo_image.url }}" alt="Фото" />
+						</td>
+					</tr>
+				  </tbody>
+
+			</table>
+		</div>
+    {% endfor %}
+{% endblock %}

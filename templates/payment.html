@@ -1,0 +1,94 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block payment %}
+<div class="col-sm-12 text-center">
+    <h1>СПОРСОБИ ОПЛАТИ ЗА НАДАННЯ ПОСЛУГ</h1>
+    <hr>
+    <div class="col-sm-12 text-center">
+        <div class="col-sm-7 text-center">
+            <h2>Оплата в терміналах Easypay</h2>
+            <hr>
+            <p>Здійснити оплату за надання послуг можливо в платіжних терміналах Easypay, або онлайн на сайті Easypay.ua.</p>
+            <p>Для здійснення оплатити онлайн натисніть:</p>
+            <a class="btn btn-success" href="https://easypay.ua/internet-tv/radio-service" role="button">Оплатити онлайн Easypa.ua</a>
+        </div>
+        <div class="col-sm-3">
+            <p><a href="https://easypay.ua/internet-tv/radio-service"><img src="/static/images/easypay.png" width="300" height="200" alt="Easypay"/></a></p>
+        </div>
+    </div>
+
+    <h5>1</h5>
+    <hr>
+
+    <div class="col-sm-12 text-center">
+        <div class="col-sm-7 text-center">
+            <h2>Оплата в банках ПАТ "КредоБанк"</h2>
+            <hr>
+            <p>Касиру вказати отримувача (Радіо Сервіс) та номер угоди.</p>
+            <p>Дізнатися філії та відділення КредоБанку натисніть:</p>
+            <a class="btn btn-success" href="http://www.kredobank.com.ua/our_coordinates.html" role="button">Філії та відділення КредоБанку</a>
+        </div>
+        <div class="col-sm-3">
+            <p><a href="http://www.kredobank.com.ua/our_coordinates.html"><img src="/static/images/kredobank.jpg" width="300" height="200" alt="kredobank"/></a></p>
+        </div>
+    </div>
+
+    <h5>2</h5>
+    <hr>
+
+    <div class="col-sm-12 text-center">
+        <div class="col-sm-7 text-center">
+            <h2>Оплата в банках ПриватБанк</h2>
+            <hr>
+             <ol>
+                <li>Всі послуги</li>
+                <li>Комуналка</li>
+                <li>Оплата заборгованості</li>
+                <li>Інтернет</li>
+                <li><em>Вибрати область та місто, вказати адресу</em></li>
+                <li><em>Вибрати зі списку <strong>ТзОВ ВКФ "Радіо Сервіс", Лімітед</strong></em></li>
+                <li><em>Вказати номер угоди</em></li>
+                <li><em>Далі згідно підказок...</em></li>
+             </ol>
+            <a class="btn btn-success" href="https://my-payments.privatbank.ua/mypayments/customauth/identification/fp/static?staticToken=23198536-51d2-4387-b42b-18a13c98" role="button">Оплатити онлайн ПриватБанк</a>
+        </div>
+        <div class="col-sm-3">
+            <p><a href="https://my-payments.privatbank.ua/mypayments/customauth/identification/fp/static?staticToken=23198536-51d2-4387-b42b-18a13c98"><img src="/static/images/privat24.png" width="300" height="200" alt="privat24"/></a></p>
+        </div>
+    </div>
+
+    <h5>3</h5>
+    <hr>
+
+     <div class="col-sm-12 text-center">
+        <div class="col-sm-7 text-center">
+            <h2>Оплата в інших банках</h2>
+            <hr>
+            <table class="table table-striped text-center"
+			  <tbody>
+				<tr>
+				  <td class="success">Отримувач</td>
+				  <td>ТзОВ ВКФ "Радіо Cервіс", Лімітед<br>ЄДРПОУ 13825541<br>Р/р 2600501098896 у ЦФ ПАТ "КредоБанк" МФО 325365</td>
+				</tr>
+				<tr>
+				  <td class="success">Призначення платежу</td>
+				  <td>Телекомунікаційні послуги</td>
+				</tr>
+				<tr>
+				  <td class="success">Платник</td>
+				  <td>Номер угоди, П.І.Б. власника угоди</td>
+				</tr>
+			  </tbody>
+	        </table>
+        </div>
+        <div class="col-sm-3">
+            <p><a href="#"><img src="/static/images/athepay.jpg" width="300" height="200" alt="athepay"/></a></p>
+        </div>
+     </div>
+
+    <h5>4</h5>
+</div>
+
+{% endblock %}

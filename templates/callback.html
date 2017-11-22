@@ -1,0 +1,86 @@
+
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block callback %}
+
+        <div class="col-sm-12">
+            <form action="/callback/" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                    <div class="form-group">
+                        <label  for="id_name">№ Договору:</label>
+                        <input type="text" name="name" class="form-control" id="name" value="{{ name }}" placeholder="Введіть номер Вашого договору" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_message">Ваше повідомлення:</label>
+                        <input type="text" name="message" class="form-control" id="message" value="{{ message }}" placeholder="Вкажіть номер телефону свій email та свое повідомлення:" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_email">Ваш емейл:</label>
+                        <input type="text" name="email" class="form-control" id="email" value="{{ email }}" placeholder="Введіть Ваш email" required/>
+                        {% if errors %}
+                        <ul>
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+
+                  <input class="btr btn-success" type="submit" value="Відправити">
+            </form>
+        </div>
+
+
+                <!--<div class="col-sm-12">
+                    <form action="/callback/" method="post">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                           <h2>Замовити зворотній звязок</h2>
+                            <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label" for="id_name">№ Договору:</label>
+                                    <div class="col-sm-6">
+                                            <input type="text" name="name" value="{{ name }}" placeholder="Ваш договір" required/>
+                                    </div>
+                            </div>
+
+                            <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label" for="id_phon">Ваше повідомлення:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="message" value="{{ message }}" placeholder="Ваше повідомлення" required/>
+                                    </div>
+                            </div>
+
+                             <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label" for="id_email">Ваш email:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="email" value="{{ email }}" placeholder="Ваш емейл" required/>
+                                        {% if errors %}
+                                            <ul>
+                                                {% for error in errors %}
+                                                <li>{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                            </div>
+
+                            <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label" for="id_message">Повідомлення:</label>
+                                    <div class="col-sm-6">
+                                        {{ form.message }}
+                                        {{ form.message.errors }}
+                                        <input id="id_message" type="text" name="text" placeholder="Ваше повідомлення" required/>
+                                    </div>
+                            </div>
+
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <input class="btr btn-success" type="submit" value="Відправити">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </form>
+                </div>-->
+
+{% endblock %}

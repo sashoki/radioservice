@@ -1,0 +1,131 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block connect %}
+
+<div class="col-sm-12 text-center">
+
+		<h1>Визначення технічної можливості</h1>
+		<hr>
+		<p>
+			Ми здійснюємо підключення до мережі Інтернет по радіоканалу.
+			Для цього встановлюється спеціальна антена, спрямована на одну з наших
+			базових станцій. Для забезпечення якісного зв'язку, підключення можливе
+			при прямій видимості на базову санцію.
+		</p>
+		<p>
+			Наш спеціаліст на місці визначить рівень і якість сигналу, місце для
+			кріплення антени та необхідну довжину кабеля (від антени до комп'ютера).
+			Ці показники впливають на вартість підключення.
+		</p>
+		<h2>
+			<!-- Заповніть, будь ласка, форму, щоб ми могли сконтактувати з вами, <br>або --> Для замовлення підключення зателефонуйте за номером телефону:<b>(067) 67 127 00</b>.
+		</h2>
+
+		<!--<div id="connect-request">
+			<form action="/requests/connect" method="post">
+								<div id="no-location-warning" class="warning-message">
+					Вашої адреси не знайдено на карті, виберіть її, будь-ласка, вручну.
+					Пересуньте маркер на карті у потрібну точку.
+				</div>
+				<div id="form-invalid-warning" class="warning-message">
+					Поля позначені червоним кольором сигналізують про неправильність даних.
+					Як тільки дані будуть правильними, червоний колір зникне. <br />
+					Поля позначені зірочкою обов'язкові для заповнення.
+				</div>
+				 <div id="map-container">
+					<div id="map_canvas"></div>
+
+					<span class="fieldset">
+						<span class="input-line">
+							<label class="label-big required" for="input-ka">Широта</label>
+							<input id="input-ka" type="text" name="ka" />
+							<input id="input-ka-real" type="hidden" name="ka_real" />
+						</span>
+
+						<span class="input-line">
+							<label class="label-big required" for="input-la">Довгота</label>
+							<input id="input-la" type="text" name="la" />
+							<input id="input-la-real" type="hidden" name="la_real" />
+						</span>
+					</span>
+
+				</div>
+				<div id="request-form">
+
+					<span class="fieldset">
+						<span class="input-line">
+							<label class="label-big required" for="input-city">Адреса</label>
+							<span>
+								<input id="input-city" class="input-not-empty" type="text" name="city" value="" />
+								<label class="label-small" for="input-city">Населений пункт (наприклад, Львів)</label>
+							</span>
+						</span>
+
+						<span class="input-line">
+							<span>
+								<input id="input-street" class="input-not-empty" type="text" name="street" value="" />
+								<label class="label-small" for="input-street">Вулиця (наприклад, вул. Шевченка)</label>
+							</span>
+
+							<span>
+								<input id="input-number" class="input-not-empty" type="text" name="number" value="" />
+								<label class="label-small" for="input-number">Номер будинку</label>
+							</span>
+						</span>
+
+					</span>
+					<span class="fieldset">
+						<span class="input-line">
+							<label class="label-big required" for="input-contact">Контактна особа</label>
+							<span>
+								<input id="input-contact" class="input-not-empty" type="text" name="contact" value="" />
+								<label class="label-small" for="input-contact">(наприклад, Олег або Коваль Сергій)</label>
+							</span>
+						</span>
+
+						<span class="input-line">
+							<label class="label-big required" for="input-phone">Телефон</label>
+							<span>
+								<input id="input-phone" class="input-telephone" type="text" name="phone" value="" />
+								<label class="label-small" for="input-phone">(наприклад, +38 (032) 230-00-00)</label>
+							</span>
+						</span>
+
+						<span class="input-line">
+							<label class="label-big" for="input-email">Електронна пошта</label>
+							<span>
+								<input id="input-email" class="input-email input-optional" type="text" name="email" value="" />
+								<label class="label-small" for="input-email">(наприклад, someone@example.com)</label>
+							</span>
+						</span>
+					</span>
+					<span class="fieldset">
+						<label class="label-big" for="input-notes">Примітки</label>
+						<textarea id="input-notes" class="input-all input-optional" name="notes"></textarea>
+						<label class="label-small" for="input-notes">(наприклад, дзвоніть після 14:00)</label>
+					</span>
+				</div>
+			</form>
+		</div>-->
+		<hr>
+
+		<h2>Оплата згідно рахунку</h2>
+		<hr>
+		<p>
+			Вартість підключення визначається спеціалістом і залежить від необхідної довжини
+			кабелю, якості сигналу, місця кріплення антени, тощо.
+		</p>
+		<hr>
+		<h2>Монтаж та підписання договору</h2>
+		<hr>
+		<p>
+			Монтаж відбувається протягом кількох днів з моменту надходження коштів.
+			Після монтажу укладається договір про надання телекомунікаційних послуг.
+		</p>
+
+</div>
+
+
+{% endblock %}

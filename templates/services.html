@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block services %}
+
+    <h1 class="text-center">Сервіси, що надаються фірмою</h1>
+    <hr>
+       {% for service in services %}
+            <div class="col-sm-12">
+                        <div class="col-sm-5">
+                            {% if service.service_image %}
+                            <p><a href="/services/get/{{ service.id }}/"><img class="thumbnail" src="{{ MEDIA_URL }}{{ service.service_image.url }}" width="200" height="150"/></a></p>
+                            {% else %}
+                            <img src="/static/images/emblema.png" width="250" height="200" alt="Радіо Сервіс" />
+                            {% endif %}
+                        </div>
+
+                        <div class="col-sm-7 text-center">
+                            <h3>{{ service.service_title }}</h3>
+                            <a class="btn btn-success" href="/services/get/{{ service.id }}/" role="button">Дізнатися більше</a>
+                            <hr>
+                        </div>
+            </div>
+        {% endfor %}
+{% endblock %}

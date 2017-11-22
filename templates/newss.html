@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block newss %}
+
+    <h1 class="text-center">Останні новини</h1>
+    <hr>
+
+        {% for news in newss %}
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <h5>{{ news.news_date }}</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            {% if news.news_image %}
+                                <p><a href="/newss/get/{{ news.id }}/"><img class="thumbnail" src="{{ MEDIA_URL }}{{ news.news_image.url }}" width="150" height="100" /></a></p>
+                            {% else %}
+                                <p><a href="/newss/get/{{ news.id }}/"><img class="thumbnail" src="/static/images/emblema.png" width="150" height="100" /></a></p>
+                            {% endif %}
+                        </div>
+                        <div class="col-sm-6">
+                            <h4>{{ news.news_title }}</h4>
+                            <a class="btn btn-success" href="/newss/get/{{ news.id }}/" role="button">Дізнатися більше</a>
+                            <hr>
+                        </div>
+                    </div>
+        {% endfor %}
+
+                      <div class="col-sm-12 text-center">
+                          <ul class="pagination">
+                              {% if newss.has_previous %}
+                                    <li class="page-link"><a href="/page/{{ newss.previous_page_number }}/">&laquo;</a></li>
+                              {% else %}
+                                    <li class="page-item disabled"><a href="#">&laquo;</a></li>
+                              {% endif %}
+                              {% for page in newss.paginator.page_range %}
+                                {% if page == newss.number %}
+                                    <li class="page-item active"><a href="/page/{{ page }}/">{{ page }}</a></li>
+                                {% else %}
+                                    <li><a href="/page/{{ page }}/" aria-label="{{ page }}">{{ page }}</a></li>
+                                {% endif %}
+                              {% endfor %}
+                              {% if newss.has_next %}
+                                    <li class="page-link"><a href="/page/{{ newss.next_page_number }}/" aria-label="Next page">&raquo;</a></li>
+                              {% else %}
+                                    <li class="page-item disabled"><a href="#">&raquo;</a></li>
+                              {% endif %}
+                          </ul>
+                      </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+
+{% block services %}
+
+
+            <div class="col-sm-5">
+                {% if service.service_image %}
+                    <img src="{{ MEDIA_URL }}{{ service.service_image.url }}" width="250" height="200"  />
+                {% else %}
+                    <img src="/static/images/radioservice.jpg" width="250" height="200" alt="Радіо Сервіс" />
+                {% endif %}
+            </div>
+
+            <div class="col-sm-7">
+                <h3 class="text-center"><a href="{% url 'services' %}">{{ service.service_title }}</a></h3>
+                <hr>
+                <p>{% autoescape off %}{{ service.service_text }}{% endautoescape off %}</p>
+                {% if services.video %}
+                    <iframe width="560" height="315" src="{{ service.service_video }}" frameborder="0" allowfullscreen></iframe>
+                {% endif %}
+
+            </div>
+
+{% endblock %}

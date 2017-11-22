@@ -1,0 +1,104 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block tariffs %}
+
+
+<h1 class="text-center">Тарифи для фізичних осіб</h1>
+<hr>
+
+<div class="col-sm-12">
+
+                   <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <td colspan="4" class="text-center success"><h4>Динамічна ІР-адреса</h4></td>
+                            </tr>
+
+                            <tr class="warning">
+                                  <th class="text-center"><h4>Встановлена швидкість</h4></th>
+                                  <th class="text-center"><h4>м. Львів + 30км.</h4></th>
+                                  <th class="text-center"><h4>Область (Бродівський р-н., Сколівський р-н <br>смт. Славське та довкола)</h4></th>
+                                  <th class="text-center"><h4>Інші райони</h4></th>
+                            </tr>
+                        </thead>
+                       {% for tariff in tariffs %}
+                              <tbody>
+                                <tr>
+                                    <td>{{ tariff.tariff_speed }}</td>
+                                    <td>{{ tariff.tariff_lviv }}</td>
+                                    <td>{{ tariff.tariff_oblast }}</td>
+                                    <td>{{ tariff.tariff_district }}</td>
+                                </tr>
+                              </tbody>
+                       {% endfor %}
+
+                   </table>
+
+            <div class="col-sm-12 text-center">
+                <a class="btn btn-success text-center" href="/connect/" role="button">Подати заявку</a>
+            </div>
+
+    <h5>1</h5>
+    <hr>
+    <h1 class="text-center">Тарифи для юридичних осіб</h1>
+    <hr>
+
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <td class="text-center success" colspan="3"><h4>Динамічна ІР-адреса</h4></td>
+                                <td class="text-center success"><h4>Динамічна ІР-адреса</h4></td>
+                                <td class="text-center success"><h4>Статична ІР-адреса</h4></td>
+                            </tr>
+                            <tr class="warning">
+                                <td><h4>Встановлена швидкість</h4></td>
+                                <td><h4>м.Львів + 30км.</h4></td>
+                                <td><h4>Область</h4></td>
+                                <td><h4>(Бродівський р-н, Сколівський р-н, смт. Славське)</h4></td>
+                                <td><h4>(Бродівський р-н, Сколівський р-н, смт. Славське)</h4></td>
+                            </tr>
+                        </thead>
+                        {% for tarifu in tarifus %}
+                          <tbody>
+                            <tr>
+                                <td>{{ tarifu.tarifu_speed }}</td>
+                                <td>{{ tarifu.tarifu_lviv }}</td>
+                                <td>{{ tarifu.tarifu_oblast }}</td>
+                                <td>{{ tarifu.tarifu_dinip }}</td>
+                                <td>{{ tarifu.tarifu_statip }}</td>
+                            </tr>
+                          </tbody>
+                        {% endfor %}
+                    </table>
+            <div class="col-sm-12 text-center">
+                <a class="btn btn-success text-center" href="/connect/" role="button">Подати заявку</a>
+            </div>
+
+    <h5>2</h5>
+    <hr>
+
+
+    <h1 class="text-center">Додатково:</h1>
+    <hr>
+
+                    <table class="table table-striped text-center">
+                        {% for tarifdd in tarifdds %}
+                            <tr><td>{{ tarifdd.tarifdd_title }}</td><td>{{ tarifdd.tarifdd_pay }}</td></tr>
+                        {% endfor %}
+                    </table>
+
+    <h5>3</h5>
+    <hr>
+</div>
+
+
+<div class="col-sm-12 text-center">
+    <h4>Швидкості надаються при наявності технічної можливості.</h4>
+    <h4>Доступ надається за технологією <abbr title="Point-to-point protocol over Ethernet">РРРоЕ</abbr> (авторизація) з динамічною ІР-адресою.</h4>
+    <h4>Ціни вказано в гривнях з урахуванням ПДВ.</h4>
+</div>
+
+
+{% endblock %}

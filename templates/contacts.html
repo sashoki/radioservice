@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block contacts %}
+
+<div class="col-sm-12 text-center">
+
+	<h1>Телефони:</h1>
+	<hr>
+
+	<table class="table table-striped text-center">
+			<thead>
+				<tr class="success">
+				  <th class="text-center">№ П/П</th>
+				  <th class="text-center">Телефон</th>
+				  <th class="text-center">Назва відділу</th>
+				</tr>
+			</thead>
+			{% for telefon in telefons %}
+			  <tbody>
+				<tr>
+				  <td>{{ telefon.telefon_nn }}</td>
+				  <td>{{ telefon.telefon_telefon }}</td>
+				  <td>{{ telefon.telefon_viddil }}</td>
+				</tr>
+			  </tbody>
+			{% endfor %}
+	</table>
+
+
+	<h1>Електронна пошта:</h1>
+	<hr>
+
+		<table class="table table-striped text-center">
+			<thead>
+				<tr class="success">
+				  <th class="text-center">№ П/П</th>
+				  <th class="text-center">Назва відділу</th>
+				  <th class="text-center">Електронна адреса</th>
+				</tr>
+			</thead>
+			{% for email in emails %}
+			  <tbody>
+				<tr>
+				  <td>{{ email.email_nn }}</td>
+				  <td>{{ email.email_viddil }}</td>
+				  <td>{{ email.email_email }}</td>
+				</tr>
+			  </tbody>
+			{% endfor %}
+		</table>
+
+	<h1>Поштова адреса:</h1>
+	<hr>
+
+	{% for adressa in adressas %}
+		{{ adressa.adressa_adressa }}
+	{% endfor %}
+
+
+	<h1>Адреса фірми:</h1>
+	<hr>
+	<p>м. Львів, вулиця Іларіона Свєнціцького 5</p>
+
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.854065073891!2d24.032452316062006!3d49.82640797939418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add5e5caefa49%3A0xf3eafb5a3d566cf0!2z0LLRg9C70LjRhtGPINCG0LvQsNGA0ZbQvtC90LAg0KHQstGU0L3RhtGW0YbRjNC60L7Qs9C-LCA1LCDQm9GM0LLRltCyLCDQm9GM0LLRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0Yw!5e0!3m2!1sru!2sua!4v1498549366127" width="700" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+</div>
+
+{% endblock %}

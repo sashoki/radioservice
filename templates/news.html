@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+
+{% block newss %}
+
+
+            <div class="col-sm-5">
+                {% if news.news_image %}
+                    <img src="{{ MEDIA_URL }}{{ news.news_image.url }}" width="250" height="200"  />
+                {% else %}
+                    <img src="/static/images/radioservice.jpg" width="250" height="200" alt="Радіо Сервіс" />
+                {% endif %}
+            </div>
+
+            <div class="col-sm-7">
+                <h3 class="text-center"><a href="{% url 'newss' %}">{{ news.news_title }}</a></h3>
+                <hr>
+                <p>{% autoescape off %}{{ news.news_text }}{% endautoescape off %}</p>
+                {% if news.video %}
+                    <iframe width="560" height="315" src="{{ product.product_video }}" frameborder="0" allowfullscreen></iframe>
+                {% endif %}
+
+            </div>
+
+{% endblock %}
